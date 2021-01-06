@@ -1,10 +1,30 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { PagesRoutingModule } from './pages/pages.routing';
 
-const routes: Routes = [];
+
+
+
+const routes: Routes = [
+
+  // Path: '/home' PagesRouting - Tienda publica
+  // Path: '/auth' AuthRouting - Logueo
+  // Path: '/dashboard' Aun no esta declarada - Parte Administrativa Empresa y Clientes 
+
+  {path:'', redirectTo:'/home' , pathMatch:'full'},
+  {path:'**' , component:NopagefoundComponent}
+
+
+
+
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+    PagesRoutingModule,
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
