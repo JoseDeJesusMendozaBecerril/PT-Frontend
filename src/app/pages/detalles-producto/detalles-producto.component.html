@@ -1,0 +1,30 @@
+<div class="container">
+    <br>
+    <p>Tambien podria interesarte
+        <button type="button" class="btn btn-link">Motorola Moto G8 Plus</button>
+        <button type="button" class="btn btn-link">Samsung A10</button>
+        <button type="button" class="btn btn-link">Iphone XR</button>
+        <button type="button" class="btn btn-link">Iphone XR Pro Max</button>
+        <button type="button" class="btn btn-link">Huawei P30 Lite</button>
+    </p>
+
+    <div class="row">
+        <div class="col-md-2">
+            <app-miniaturas></app-miniaturas>
+        </div>
+        <div class="col-md-6">
+            <app-vista-producto></app-vista-producto>
+        </div>
+        <div class="col-md-4">
+            <app-informacion-producto></app-informacion-producto>
+
+        </div>
+
+    </div>
+
+    <h3>Productos Relacionados</h3>
+    <app-carousel-items [idCarousel]="relacionados"></app-carousel-items>
+
+
+
+</div>

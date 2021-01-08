@@ -4,11 +4,14 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { RouterModule } from '@angular/router';
 import { TarjetaProductoComponent } from './tarjeta-producto/tarjeta-producto.component';
 import { CarouselItemsComponent } from './carousel-items/carousel-items.component';
+import { InformacionProductoComponent } from './informacion-producto/informacion-producto.component';
+import { MiniaturasComponent } from './miniaturas/miniaturas.component';
+import { VistaProductoComponent } from './vista-producto/vista-producto.component';
 
 
 
 @NgModule({
-  declarations: [CarouselComponent, TarjetaProductoComponent, CarouselItemsComponent],
+  declarations: [CarouselComponent, TarjetaProductoComponent, CarouselItemsComponent, InformacionProductoComponent, MiniaturasComponent, VistaProductoComponent],
   imports: [
     CommonModule,
     RouterModule
@@ -16,7 +19,10 @@ import { CarouselItemsComponent } from './carousel-items/carousel-items.componen
   exports:[
     CarouselComponent,
     TarjetaProductoComponent,
-    CarouselItemsComponent
+    CarouselItemsComponent,
+    InformacionProductoComponent,
+    MiniaturasComponent,
+    VistaProductoComponent
   ]
 })
 export class ComponentsModule { }

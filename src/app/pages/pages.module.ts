@@ -10,13 +10,14 @@ import { ComponentsModule } from '../components/components.module';
 //Componentes
 import { HomeComponent } from './home/home.component';
 import { PagesComponent } from './pages.component';
+import { DetallesProductoComponent } from './detalles-producto/detalles-producto.component';
 
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, PagesComponent],
+  declarations: [HomeComponent, PagesComponent, DetallesProductoComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -25,7 +26,8 @@ import { PagesComponent } from './pages.component';
   ],
   exports:[
     HomeComponent,
-    PagesComponent
+    PagesComponent,
+    DetallesProductoComponent
   ]
 })
 export class PagesModule { }
