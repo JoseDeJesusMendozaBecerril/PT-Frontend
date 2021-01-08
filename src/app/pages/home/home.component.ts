@@ -9,6 +9,10 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
+  historial:string = 'historial';
+  preferencias:string = 'preferencias';
+  vistas:string = 'vistas';
+
   ngOnInit(): void {
   }
 

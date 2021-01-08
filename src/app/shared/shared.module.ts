@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarHomeComponent } from './navbar-home/navbar-home.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
+import { NavbarOptionsComponent } from './navbar-options/navbar-options.component';
 
 
 
@@ -11,7 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     NavbarHomeComponent,
-    FooterComponent
+    FooterComponent,
+    NavbarOptionsComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { FooterComponent } from './footer/footer.component';
   ],
   exports:[
     NavbarHomeComponent,
-    FooterComponent
+    FooterComponent,
+    NavbarOptionsComponent
     
   ]
 })

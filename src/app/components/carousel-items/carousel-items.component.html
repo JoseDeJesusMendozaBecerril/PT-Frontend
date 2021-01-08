@@ -1,0 +1,98 @@
+<div class="container my-4">
+    <hr class="my-4">
+    <!--Carousel Wrapper-->
+    <div [id]="idCarousel" class="carousel slide carousel-multi-item" data-interval="false">
+
+        <!--Controls-->
+        <div class="row">
+            <div class="col-md-2">
+                <a class="btn-floating" href="#{{idCarousel}}" data-slide="prev">Anterior</a>
+            </div>
+            <div class="col-md-8">
+
+            </div>
+            <div class="col-md-2" style="text-align: right;">
+                <a class="btn-floating" href="#{{idCarousel}}" data-slide="next">Siguiente</a>
+            </div>
+
+
+        </div>
+        <!--/.Controls-->
+
+
+
+        <!--Slides-->
+        <div class="carousel-inner" data-interval="false">
+            <!--Data interval stop movment-->
+
+            <!--First slide-->
+            <div class="carousel-item active" data-interval="false">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <app-tarjeta-producto></app-tarjeta-producto>
+                    </div>
+
+                    <div class="col-md-3  d-none d-md-block">
+                        <app-tarjeta-producto></app-tarjeta-producto>
+                    </div>
+                    <div class="col-md-3 clearfix d-none d-md-block">
+                        <app-tarjeta-producto></app-tarjeta-producto>
+                    </div>
+                    <div class="col-md-3 clearfix d-none d-md-block">
+                        <app-tarjeta-producto></app-tarjeta-producto>
+                    </div>
+                </div>
+
+            </div>
+            <!--/.First slide-->
+            <!--Third slide-->
+            <div class="carousel-item" data-interval="false">
+                <div class="row">
+                    <div class="col-md-3">
+                        <app-tarjeta-producto></app-tarjeta-producto>
+                    </div>
+
+                    <div class="col-md-3  d-none d-md-block">
+                        <app-tarjeta-producto></app-tarjeta-producto>
+                    </div>
+                    <div class="col-md-3 clearfix d-none d-md-block">
+                        <app-tarjeta-producto></app-tarjeta-producto>
+                    </div>
+                    <div class="col-md-3 clearfix d-none d-md-block">
+                        <app-tarjeta-producto></app-tarjeta-producto>
+                    </div>
+                </div>
+
+
+            </div>
+            <!--/.Third slide-->
+
+
+            <!--Third slide-->
+            <div class="carousel-item" data-interval="false">
+                <div class="row">
+                    <div class="col-md-3">
+                        <app-tarjeta-producto></app-tarjeta-producto>
+                    </div>
+
+                    <div class="col-md-3  d-none d-md-block">
+                        <app-tarjeta-producto></app-tarjeta-producto>
+                    </div>
+                    <div class="col-md-3 clearfix d-none d-md-block">
+                        <app-tarjeta-producto></app-tarjeta-producto>
+                    </div>
+                    <div class="col-md-3 clearfix d-none d-md-block">
+                        <app-tarjeta-producto></app-tarjeta-producto>
+                    </div>
+                </div>
+
+
+            </div>
+            <!--/.Third slide-->
+
+        </div>
+        <!--/.Slides-->
+
+    </div>
+    <!--/.Carousel Wrapper-->
