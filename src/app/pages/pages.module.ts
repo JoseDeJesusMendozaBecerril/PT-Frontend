@@ -11,13 +11,15 @@ import { ComponentsModule } from '../components/components.module';
 import { HomeComponent } from './home/home.component';
 import { PagesComponent } from './pages.component';
 import { DetallesProductoComponent } from './detalles-producto/detalles-producto.component';
+import { FavoritosComponent } from './favoritos/favoritos.component';
+import { CarComponent } from './car/car.component';
 
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, PagesComponent, DetallesProductoComponent],
+  declarations: [HomeComponent, PagesComponent, DetallesProductoComponent, FavoritosComponent, CarComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -27,7 +29,8 @@ import { DetallesProductoComponent } from './detalles-producto/detalles-producto
   exports:[
     HomeComponent,
     PagesComponent,
-    DetallesProductoComponent
+    DetallesProductoComponent,
+    FavoritosComponent
   ]
 })
 export class PagesModule { }
