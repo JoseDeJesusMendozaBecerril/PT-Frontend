@@ -4,6 +4,7 @@ import { NavbarHomeComponent } from './navbar-home/navbar-home.component';
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarOptionsComponent } from './navbar-options/navbar-options.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 
@@ -13,7 +14,8 @@ import { NavbarOptionsComponent } from './navbar-options/navbar-options.componen
   declarations: [
     NavbarHomeComponent,
     FooterComponent,
-    NavbarOptionsComponent
+    NavbarOptionsComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { NavbarOptionsComponent } from './navbar-options/navbar-options.componen
   exports:[
     NavbarHomeComponent,
     FooterComponent,
-    NavbarOptionsComponent
+    NavbarOptionsComponent,
+    SidebarComponent
     
   ]
 })

@@ -13,13 +13,14 @@ import { PagesComponent } from './pages.component';
 import { DetallesProductoComponent } from './detalles-producto/detalles-producto.component';
 import { FavoritosComponent } from './favoritos/favoritos.component';
 import { CarComponent } from './car/car.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, PagesComponent, DetallesProductoComponent, FavoritosComponent, CarComponent],
+  declarations: [HomeComponent, PagesComponent, DetallesProductoComponent, FavoritosComponent, CarComponent, DashboardComponent],
   imports: [
     CommonModule,
     RouterModule,
