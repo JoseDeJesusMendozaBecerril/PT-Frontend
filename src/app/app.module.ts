@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 //Modulos
 import { AppRoutingModule } from './app-routing.module';
 import { PagesModule } from './pages/pages.module';
-
+import { ClientModule } from './client/client.module';
 
 import { AppComponent } from './app.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
@@ -21,6 +21,7 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
     AppRoutingModule,
     AppRoutingModule, //ESTE YO LO CREE
     PagesModule, //CREADO
+    ClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

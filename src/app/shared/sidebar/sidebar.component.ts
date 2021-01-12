@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+
+  actor:string="client";
+
   constructor() { }
 
   ngOnInit(): void {

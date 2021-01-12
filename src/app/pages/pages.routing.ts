@@ -6,6 +6,11 @@ import { DetallesProductoComponent } from './detalles-producto/detalles-producto
 import { FavoritosComponent } from './favoritos/favoritos.component';
 import { CarComponent } from './car/car.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ComprasComponent } from '../client/compras/compras.component';
+import { PedidosComponent } from '../client/pedidos/pedidos.component';
+import { FormasPagoComponent } from '../client/formas-pago/formas-pago.component';
+import { InformacionContactoComponent } from '../client/informacion-contacto/informacion-contacto.component';
+import { HistorialComponent } from '../client/historial/historial.component';
 
 
 
@@ -20,9 +25,15 @@ const routes:Routes = [
         ]
     },
     {
-        path:'dashboard',component:PagesComponent,
+        path:'dashboard',component:DashboardComponent,
         children:[
-            {path:'', component:DashboardComponent,data:{titulo:'Dashboard'}}
+            {path:'', component:DashboardComponent,data:{titulo:'Dashboard'}},
+            {path:'cliente-compras', component:ComprasComponent,data:{titulo:'Cliente-compras'} },
+            {path:'cliente-pedidos', component: PedidosComponent ,data:{titulo:'Cliente-pedidos'} },
+            {path:'cliente-formas-pago', component: FormasPagoComponent ,data:{titulo:'Cliente-formas-pago'} },
+            {path:'cliente-informacion', component: InformacionContactoComponent ,data:{titulo:'Cliente-informacion'} },
+            {path:'cliente-favoritos', component: FavoritosComponent ,data:{titulo:'Cliente-favoritos'} }
+
         ]
     }
 ];
