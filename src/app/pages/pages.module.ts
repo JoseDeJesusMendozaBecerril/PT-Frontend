@@ -14,13 +14,14 @@ import { DetallesProductoComponent } from './detalles-producto/detalles-producto
 import { FavoritosComponent } from './favoritos/favoritos.component';
 import { CarComponent } from './car/car.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-
+import { BusquedasComponent } from './busquedas/busquedas.component';
+import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, PagesComponent, DetallesProductoComponent, FavoritosComponent, CarComponent, DashboardComponent],
+  declarations: [HomeComponent, PagesComponent, DetallesProductoComponent, FavoritosComponent, CarComponent, DashboardComponent, BusquedasComponent, HistorialComprasComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -31,7 +32,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HomeComponent,
     PagesComponent,
     DetallesProductoComponent,
-    FavoritosComponent
+    FavoritosComponent,
+    BusquedasComponent
   ]
 })
 export class PagesModule { }

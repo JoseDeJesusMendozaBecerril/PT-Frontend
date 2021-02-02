@@ -6,11 +6,15 @@ import { DetallesProductoComponent } from './detalles-producto/detalles-producto
 import { FavoritosComponent } from './favoritos/favoritos.component';
 import { CarComponent } from './car/car.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ComprasComponent } from '../client/compras/compras.component';
 import { PedidosComponent } from '../client/pedidos/pedidos.component';
 import { FormasPagoComponent } from '../client/formas-pago/formas-pago.component';
 import { InformacionContactoComponent } from '../client/informacion-contacto/informacion-contacto.component';
 import { HistorialComponent } from '../client/historial/historial.component';
+import { BusquedasComponent } from './busquedas/busquedas.component';
+import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
+import { CategoriasComponent } from '../client/categorias/categorias.component';
+import { CategoriaComponent } from '../client/categoria/categoria.component';
+import { ProductosCategoriaComponent } from '../client/productos-categoria/productos-categoria.component';
 
 
 
@@ -22,17 +26,21 @@ const routes:Routes = [
             {path:'detalles-producto',component:DetallesProductoComponent,data:{titulo:'Detalles-producto'}},
             {path:'favoritos',component:FavoritosComponent,data:{titulo:'Favoritos'}},
             {path:'car',component:CarComponent,data:{titulo:'Carrito'}},
+            {path:'busquedas',component:BusquedasComponent,data:{titulo:'Busqueda'}},
+            {path:'historial-compras',component:HistorialComprasComponent,data:{titulo:'Historial-compras'}},
+            {path:'categorias', component: CategoriasComponent ,data:{titulo:'Categorias'} },
+            {path:'productos-categoria/:id', component: ProductosCategoriaComponent ,data:{titulo:'Productos-Categorias'} }
         ]
     },
     {
         path:'dashboard',component:DashboardComponent,
         children:[
             {path:'', component:DashboardComponent,data:{titulo:'Dashboard'}},
-            {path:'cliente-compras', component:ComprasComponent,data:{titulo:'Cliente-compras'} },
             {path:'cliente-pedidos', component: PedidosComponent ,data:{titulo:'Cliente-pedidos'} },
             {path:'cliente-formas-pago', component: FormasPagoComponent ,data:{titulo:'Cliente-formas-pago'} },
             {path:'cliente-informacion', component: InformacionContactoComponent ,data:{titulo:'Cliente-informacion'} },
-            {path:'cliente-favoritos', component: FavoritosComponent ,data:{titulo:'Cliente-favoritos'} }
+            {path:'cliente-favoritos', component: FavoritosComponent ,data:{titulo:'Cliente-favoritos'} },
+            
 
         ]
     }

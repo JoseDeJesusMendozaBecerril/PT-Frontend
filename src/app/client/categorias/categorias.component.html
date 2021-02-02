@@ -1,0 +1,10 @@
+<br>
+<div class="container">
+    <div class="card-columns">
+
+        <app-categoria (categoriaSeleccionado)="verCategoria($event)" [categoria]="categoria" [index]="i" *ngFor="let categoria of categorias let i = index"></app-categoria>
+    </div>
+
+</div>
+
+<br>

@@ -1,0 +1,23 @@
+<br>
+
+<h1 style=" padding: 20px;">Productos - Categoria</h1>
+
+<div class="row" style=" padding: 20px;">
+    <div class="col-sm-3" style="margin-bottom: 20px;" *ngFor="let producto of productos">
+        <div class="card">
+            <img class="card-img-top" [src]=producto.img style="width:50%; margin-left: 70px; height:50%; ">
+            <div class="card-body">
+                <h5 class="card-title">{{producto.nombre}}</h5>
+                <p class="card-text">{{producto.desc | slice:0:185}}</p>
+
+            </div>
+
+            <button type="button" class="btn btn-sm btn-primary" style="  width: 13rem; align-self: center;">Añadir al carrito</button> <br>
+            <button type="button" class="btn btn-sm btn-light" style=" width: 13rem; align-self: center;">    Ver Detalles   </button> <br>
+            <button type="button" class="btn btn-sm btn-warning" style="width: 13rem; align-self: center;">Agregar a Favoritos</button>
+
+        </div>
+
+    </div>
+
+</div>

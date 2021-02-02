@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 
 
 //Modulos
@@ -9,6 +11,7 @@ import { ClientModule } from './client/client.module';
 
 import { AppComponent } from './app.component';
 import { NopagefoundComponent } from './nopagefound/nopagefound.component';
+import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
@@ -18,10 +21,14 @@ import { NopagefoundComponent } from './nopagefound/nopagefound.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule, //ESTE YO LO CREE
     PagesModule, //CREADO
-    ClientModule
+    ClientModule,
+    AuthModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

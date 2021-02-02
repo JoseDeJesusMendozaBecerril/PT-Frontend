@@ -10,13 +10,18 @@ import { FavoritosClienteComponent } from './favoritos-cliente/favoritos-cliente
 //Modulos
 import { PagesModule } from "../pages/pages.module";
 import { RouterModule } from '@angular/router';
+import { CategoriasComponent } from './categorias/categorias.component';
+import { CategoriaComponent } from './categoria/categoria.component';
+import { ProductosCategoriaComponent } from './productos-categoria/productos-categoria.component';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
-  declarations: [ComprasComponent, PedidosComponent, FormasPagoComponent, InformacionContactoComponent, HistorialComponent, FavoritosClienteComponent],
+  declarations: [ComprasComponent, PedidosComponent, FormasPagoComponent, InformacionContactoComponent, HistorialComponent, FavoritosClienteComponent, CategoriasComponent, CategoriaComponent, ProductosCategoriaComponent],
   imports: [
     CommonModule,
     RouterModule,
-    PagesModule
+    PagesModule,
+    ComponentsModule
   ],
   exports:[
     ComprasComponent,
