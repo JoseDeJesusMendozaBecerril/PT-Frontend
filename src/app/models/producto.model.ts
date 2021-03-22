@@ -6,7 +6,7 @@ export class Producto{
     precio:any;
     tags:string;
     status:string;
-    img:string;
+    img:string ='';
     categoria:string;
     calificacion:any;
 

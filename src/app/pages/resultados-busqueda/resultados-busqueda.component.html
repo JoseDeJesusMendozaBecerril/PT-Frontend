@@ -10,7 +10,7 @@
                 <h5 class="card-title">{{producto.nombre}}</h5>
                 <p class="card-text">{{producto.desc | slice:0:185}}</p>
             </div>
-            <button type="button" class="btn btn-sm btn-primary" style="  width: 13rem; align-self: center;" (click)="_productosService.addCar(producto)">Añadir al carrito</button> <br>
+            <button type="button" class="btn btn-sm btn-primary" style="  width: 13rem; align-self: center;" (click)="addCar(producto,usuarioActivo)">Añadir al carrito</button> <br>
             <button type="button" class="btn btn-sm btn-light" style=" width: 13rem; align-self: center;" (click)="_productosService.verDetalles(producto.id)">    Ver Detalles   </button> <br>
             <button type="button" class="btn btn-sm btn-warning" style="width: 13rem; align-self: center;" (click)="_productosService.addFavorito(producto)">Agregar a Favoritos</button>
 

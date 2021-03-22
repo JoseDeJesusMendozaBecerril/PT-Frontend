@@ -50,6 +50,10 @@ export class LoginComponent implements OnInit {
 
 
       if(result != 0){
+        this.auth.buscarCliente(result.toString()).subscribe(resp => {
+          this.auth.setUsuarioActivo(resp);
+        });
+
         this.router.navigateByUrl('/home');
       }
       else {

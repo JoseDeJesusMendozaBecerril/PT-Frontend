@@ -158,7 +158,7 @@ export class AuthService {
   }
 
   buscarCliente(id:String):Observable<any>{
-    const url = `http://localhost:8080/clientes/api/buscarClientes/${id}`;
+    const url = `http://localhost:8080/clientes/api/buscarCliente/${id}`;
     return this.http.get(url,httpOptions);
 
   }
@@ -168,20 +168,16 @@ export class AuthService {
     //console.log("Entra servicio login2");
     const url = "http://localhost:8080/clientes/api/login";
     //console.log("Este es el usuario en el servicio login",usuario2);
-    this.usuarioActivo = usuario2;
     
     
-    return this.http.post<Usuario2Model>(url,this.usuarioActivo,httpOptions);
+    return this.http.post<Usuario2Model>(url,usuario2,httpOptions);
   }
 
 
 
 
 
-  recuperaUsuarioActivo(){
-    console.log("Usuario activo en recupera" , this.usuarioActivo);
-    return this.usuarioActivo;
-  }
+  
 
   setIdUsuarioActivo(id:string){
     this.idUsuarioActivo = id;
@@ -189,6 +185,15 @@ export class AuthService {
 
   getIdUsuarioActivo(){
     return this.idUsuarioActivo;
+  }
+
+  setUsuarioActivo(usuario:Usuario2Model){
+    this.usuarioActivo = usuario;
+    console.log(this.usuarioActivo);
+  }
+
+  gettUsuarioActivo(){
+    return this.usuarioActivo;
   }
 
 
