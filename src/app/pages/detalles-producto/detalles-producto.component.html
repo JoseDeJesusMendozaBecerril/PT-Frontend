@@ -9,14 +9,14 @@
     </p>
 
     <div class="row">
-        <div class="col-md-2">
-            <app-miniaturas></app-miniaturas>
-        </div>
+
         <div class="col-md-6">
-            <app-vista-producto></app-vista-producto>
+            <div class="container">
+                <img [src]=producto.img class="img-fluid" alt="Responsive image">
+            </div>
         </div>
         <div class="col-md-4">
-            <app-informacion-producto></app-informacion-producto>
+            <app-informacion-producto [producto]="producto"></app-informacion-producto>
 
         </div>
 

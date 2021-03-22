@@ -16,12 +16,13 @@ import { CarComponent } from './car/car.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BusquedasComponent } from './busquedas/busquedas.component';
 import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
+import { ResultadosBusquedaComponent } from './resultados-busqueda/resultados-busqueda.component';
 
 
 
 
 @NgModule({
-  declarations: [HomeComponent, PagesComponent, DetallesProductoComponent, FavoritosComponent, CarComponent, DashboardComponent, BusquedasComponent, HistorialComprasComponent],
+  declarations: [HomeComponent, PagesComponent, DetallesProductoComponent, FavoritosComponent, CarComponent, DashboardComponent, BusquedasComponent, HistorialComprasComponent, ResultadosBusquedaComponent],
   imports: [
     CommonModule,
     RouterModule,

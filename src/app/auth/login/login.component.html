@@ -7,14 +7,12 @@
                     Login
                 </span>
 
-                <span *ngIf="f.submitted && f.controls['email'].errors" class="text-danger animated fadeIn">El correo electronico es Obligatorio</span>
                 <div class="wrap-input100 m-b-16">
-                    <input class="input100" type="email" name="email" placeholder="Email" required email [(ngModel)]="usuario.email">
+                    <input class="input100" type="text" name="nombreUsuario" placeholder="Nombre de Usuario" required [(ngModel)]="usuario.nombreUsuario">
                     <span class="focus-input100"></span>
                 </div>
 
-                <span *ngIf="f.submitted && f.controls['password'].errors" class="text-danger animated fadeIn">La contraseña es obligatoria al menos 6 caracteres</span>
-                <div class="wrap-input100 m-b-16" data-validate="Password is required">
+               <div class="wrap-input100 m-b-16" data-validate="Password is required">
                     <input class="input100" type="password" name="password" required minlenght="6" placeholder="Password" [(ngModel)]="usuario.password">
                     <span class="focus-input100"></span>
                 </div>

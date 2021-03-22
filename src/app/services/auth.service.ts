@@ -1,7 +1,13 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UsuarioModel } from '../models/usuario.model';
-import  {map} from 'rxjs/operators';
+import  {catchError, map} from 'rxjs/operators';
+import { Usuario2Model } from '../models/usuario2.model';
+import { Observable, throwError } from 'rxjs';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +18,13 @@ export class AuthService {
   private apikey= 'AIzaSyA_cNYN1sMbt050C7Wrk2qH74mK7moeNRw';
   private userToken:string;
 
+
+  private url2 = '';
+  private userToken2:string;
+
+  private usuarioActivo:Usuario2Model;
+  private idUsuarioActivo:string;
+
   //Login
   //https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
 
@@ -21,9 +34,10 @@ export class AuthService {
   
   constructor(private http:HttpClient) {
     this.leerToken();
+    this.leerToken2();
    }
 
-   logout(){
+  logout(){
     localStorage.removeItem('token');
   }
 
@@ -69,6 +83,8 @@ export class AuthService {
         );
   }
 
+  
+
 
 
 
@@ -111,4 +127,70 @@ export class AuthService {
     }
     return this.userToken.length > 2;
   }
+
+
+  //Auth Personal
+
+  leerToken2(){
+    if(localStorage.getItem('token2')){
+      this.userToken2 = localStorage.getItem('token2');
+    }
+    else{
+      this.userToken2='';
+    }
+    return this.userToken2;
+  }
+
+
+  logout2(){
+    localStorage.removeItem('token2');
+  }
+
+  
+  nuevoUsuario2(usuario2:Usuario2Model):Observable<Usuario2Model>{
+    console.log("Entra servicio");
+    const url = "http://localhost:8080/clientes/api/add"; 
+
+    console.log("Este es el usuario en el servicio",usuario2);
+    this.usuarioActivo = usuario2;
+    //console.log(this.usuarioActivo);
+    return this.http.post<Usuario2Model>(url,this.usuarioActivo,httpOptions);
+  }
+
+  buscarCliente(id:String):Observable<any>{
+    const url = `http://localhost:8080/clientes/api/buscarClientes/${id}`;
+    return this.http.get(url,httpOptions);
+
+  }
+
+
+  login2(usuario2:Usuario2Model){
+    //console.log("Entra servicio login2");
+    const url = "http://localhost:8080/clientes/api/login";
+    //console.log("Este es el usuario en el servicio login",usuario2);
+    this.usuarioActivo = usuario2;
+    
+    
+    return this.http.post<Usuario2Model>(url,this.usuarioActivo,httpOptions);
+  }
+
+
+
+
+
+  recuperaUsuarioActivo(){
+    console.log("Usuario activo en recupera" , this.usuarioActivo);
+    return this.usuarioActivo;
+  }
+
+  setIdUsuarioActivo(id:string){
+    this.idUsuarioActivo = id;
+  }
+
+  getIdUsuarioActivo(){
+    return this.idUsuarioActivo;
+  }
+
+
+
 }

@@ -1,34 +1,18 @@
-<h5>Celular Samsung Galaxy A71 128gb 6ram 4 Cámaras Liberado</h5>
-<p>Liberado</p>
-<p>Tu Calificacion</p>
+<h5>{{producto.nombre}}</h5>
+<p>Descripcion: {{producto.descripcion}}</p>
+<p>Categoria: {{producto.categoria}}</p>
+
 <form>
+    
     <p class="clasificacion">
-        <input id="radio1" type="radio" name="estrellas" value="5">
-        <!--
-                  --><label for="radio1">★</label>
-        <!--
-                  --><input id="radio2" type="radio" name="estrellas" value="4">
-        <!--
-                  --><label for="radio2">★</label>
-        <!--
-                  --><input id="radio3" type="radio" name="estrellas" value="3">
-        <!--
-                  --><label for="radio3">★</label>
-        <!--
-                  --><input id="radio4" type="radio" name="estrellas" value="2">
-        <!--
-                  --><label for="radio4">★</label>
-        <!--
-                  --><input id="radio5" type="radio" name="estrellas" value="1">
-        <!--
-                  --><label for="radio5">★</label>
+        
+        <label for="radio1" *ngFor='let loop of number'>★</label>
     </p>
 </form>
 
-<p>Color: Negro</p>
-<p>Stock: Disponible</p>
+<p>Stock: {{producto.status}}</p>
 
-<h4>Precio $2999.99</h4> <br><br>
+<h4>Precio ${{producto.precio}}</h4> <br><br>
 
 <button type="button" class="btn btn-sm btn-primary" style=" margin-bottom: 1rem; width: 20rem;">Comprar</button><br>
 <button type="button" class="btn btn-sm btn-warning" style="width: 20rem;">Agregar a Favoritos</button> <br><br>

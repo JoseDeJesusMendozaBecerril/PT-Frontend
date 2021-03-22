@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductosService } from '../../services/productos.service';
+import { Producto } from '../../models/producto.model';
 
 @Component({
   selector: 'app-productos-categoria',
@@ -9,19 +10,24 @@ import { ProductosService } from '../../services/productos.service';
 })
 export class ProductosCategoriaComponent implements OnInit {
 
-  productos:any={};
+  productos:any=[];
 
-  constructor(private activatedRoute: ActivatedRoute , private _productosService: ProductosService) { 
+  constructor(private activatedRoute: ActivatedRoute , private _productosService: ProductosService , private router:Router) { 
     this.activatedRoute.params.subscribe(params =>{
       let id_busqueda = params['id']; 
       console.log(id_busqueda) //aqui tengo el id que viene en la url que recibo
 
-      this.productos = this._productosService.getProductosCategoria(id_busqueda); //uso funcion del servicio recuperar heroe y ya que lo tengo se puede renderizar en la pagina html mediante sus atributos
-      console.log(this.productos);
+      this._productosService.getProductosCategoria(id_busqueda).subscribe(response =>{
+        this.productos = response;
+      })
     })
   }
 
   ngOnInit(): void {
   }
+
+ 
+
+  
 
 }

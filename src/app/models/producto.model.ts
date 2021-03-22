@@ -2,7 +2,7 @@ export class Producto{
 
     id:any;
     nombre:string;
-    desc:string;
+    descripcion:string;
     precio:any;
     tags:string;
     status:string;

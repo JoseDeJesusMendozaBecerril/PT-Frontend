@@ -13,8 +13,8 @@ import { HistorialComponent } from '../client/historial/historial.component';
 import { BusquedasComponent } from './busquedas/busquedas.component';
 import { HistorialComprasComponent } from './historial-compras/historial-compras.component';
 import { CategoriasComponent } from '../client/categorias/categorias.component';
-import { CategoriaComponent } from '../client/categoria/categoria.component';
 import { ProductosCategoriaComponent } from '../client/productos-categoria/productos-categoria.component';
+import { ResultadosBusquedaComponent } from './resultados-busqueda/resultados-busqueda.component';
 
 
 
@@ -23,13 +23,14 @@ const routes:Routes = [
         path:'home' , component:PagesComponent,
         children:[
             {path:'',component:HomeComponent,data:{titulo:'Home'}},
-            {path:'detalles-producto',component:DetallesProductoComponent,data:{titulo:'Detalles-producto'}},
+            {path:'detalles-producto/:id',component:DetallesProductoComponent,data:{titulo:'Detalles-producto'}},
             {path:'favoritos',component:FavoritosComponent,data:{titulo:'Favoritos'}},
             {path:'car',component:CarComponent,data:{titulo:'Carrito'}},
             {path:'busquedas',component:BusquedasComponent,data:{titulo:'Busqueda'}},
             {path:'historial-compras',component:HistorialComprasComponent,data:{titulo:'Historial-compras'}},
             {path:'categorias', component: CategoriasComponent ,data:{titulo:'Categorias'} },
-            {path:'productos-categoria/:id', component: ProductosCategoriaComponent ,data:{titulo:'Productos-Categorias'} }
+            {path:'productos-categoria/:id', component: ProductosCategoriaComponent ,data:{titulo:'Productos-Categorias'} },
+            {path:'busquedas/:termino', component: ResultadosBusquedaComponent ,data:{titulo:'Resultados-Busqueda'} }
         ]
     },
     {

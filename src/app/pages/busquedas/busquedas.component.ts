@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductosService } from '../../services/productos.service';
 
 @Component({
   selector: 'app-busquedas',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusquedasComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _productosService: ProductosService) { }
 
   ngOnInit(): void {
   }

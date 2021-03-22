@@ -7,23 +7,21 @@ import { UsuarioModel } from 'src/app/models/usuario.model';
 import {AuthService} from '../../services/auth.service';
 
 import Swal from 'sweetalert2';
+import { Usuario2Model } from '../../models/usuario2.model';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  usuario:UsuarioModel;
+  usuario:Usuario2Model;
   recordarme=false;
 
   constructor(private auth:AuthService, private router:Router) { }
 
   ngOnInit(): void {
-    this.usuario = new UsuarioModel();
-    if(localStorage.getItem('email')){
-      this.usuario.email = localStorage.getItem('email');
-      this.recordarme=true;
-    }
+    this.usuario = new Usuario2Model();
+    
   }
 
   login(form:NgForm){
@@ -42,15 +40,27 @@ export class LoginComponent implements OnInit {
     //console.log("Ingresando");
    
   
-    this.auth.login(this.usuario).subscribe(resp =>{
-      console.log(resp);
+    this.auth.login2(this.usuario).subscribe(resp =>{
+      //console.log("La resp del servicio es " ,resp);
       Swal.close();
 
-      if(this.recordarme){
-        localStorage.setItem('email',this.usuario.email);
-      }
+      const result = Number(resp); //aqui tenemos el id del usuario
+      this.auth.setIdUsuarioActivo(result.toString());
 
-      this.router.navigateByUrl('/home');
+
+
+      if(result != 0){
+        this.router.navigateByUrl('/home');
+      }
+      else {
+        console.log("Encontro error");
+      Swal.fire({
+        
+        icon: 'error',
+        title:'Error al Autenticar',
+        text: 'Credenciales invalidas'
+      });
+      }
     }, (err) =>{
       console.log("Encontro error");
       Swal.fire({
